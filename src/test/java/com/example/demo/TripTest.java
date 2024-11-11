@@ -27,6 +27,8 @@ class TripTest {
         try {
 
 
+
+
             for (int i = 1; i <= N; i++) { //도시 연결 데이터 저장
                 for (int j = 1; j <= N; j++) {
                     dosi[i][j] = connections[i-1][j-1];
