@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,7 +11,9 @@ class TripTest {
  public static int[] parent;
 
     @Test
-    public void test() {
+    void test() {
+
+        boolean flag = true;
 
         int N = 3;
         int M = 3;
@@ -50,6 +53,7 @@ class TripTest {
             for (int i = 2; i < route.length; i++) {
                 if (index != find(route[i])) {
                     System.out.println("NO");
+                    flag = false;
                     return;
                 }
             }
@@ -60,11 +64,9 @@ class TripTest {
               System.out.println("ERR");
         }
 
-
-
+        Assertions.assertTrue(flag);
 
     }
-
 
 
     public static void union(int a, int b) { // union 연산 : 대표 노드끼리 연결하여 줌
